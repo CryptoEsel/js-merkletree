@@ -1,0 +1,39 @@
+{
+  "name": "js-merkletree",
+  "version": "0.0.1",
+  "description": "Merkle tree implementation in JavaScript with Blake2s hash",
+  "main": "js-merkletree.js",
+  "scripts": {
+    "prod": "cross-env BABEL_ENV=production babel ./js-merkletree.js --out-file ./lib/js-merkletree.min.js",
+    "build": "babel ./js-merkletree.js --out-file ./lib/js-merkletree.js",
+    "test": "tape -r babel-register test/**/*.test.js | tap-spec",
+    "watch": "tape-watch test/**/*.test.js -r babel-register -p tap-spec",
+    "lint": "standard js-merkletree.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CryptoEsel/js-merkletree.git"
+  },
+  "author": "Mykola Bubelich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CryptoEsel/js-merkletree/issues"
+  },
+  "homepage": "https://github.com/CryptoEsel/js-merkletree#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-babili": "0.0.12",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "babili": "0.0.12",
+    "cross-env": "^4.0.0",
+    "js-blake2s": "^1.1.1",
+    "js-hexi": "^1.2.0",
+    "standard": "^10.0.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
+    "tape-watch": "^2.3.0"
+  }
+}
