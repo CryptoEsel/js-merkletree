@@ -1,6 +1,6 @@
 import test from 'tape'
 import MerkleTree from '../js-merkletree';
-import blake2s from 'js-blake2s';
+import Blake2s from 'js-blake2s';
 import hexi from 'js-hexi';
 
 /**
@@ -18,7 +18,7 @@ test("Class 'X25519' should exists", tape => {
 test("MarkleTree for LICENSE should have predefined root hash", tape => {
 
   let fs = require('fs');
-  let chunk_size = 64;
+  let chunk_size = 1024;
   let buffer = new Buffer(chunk_size);
 
   let shift = 0;
@@ -52,7 +52,7 @@ test("MarkleTree for LICENSE should have predefined root hash", tape => {
             return;
           }
 
-          const hash = new blake2s().update(new Uint8Array(buffer.slice(0, reads))).digest();
+          const hash = new Blake2s().update(new Uint8Array(buffer.slice(0, reads))).digest();
 
           hashes.push(hash);
 
@@ -69,8 +69,9 @@ test("MarkleTree for LICENSE should have predefined root hash", tape => {
     const tree = new MerkleTree(data);
     const info = tree.build();
 
+    //console.log(JSON.stringify(info, 0, 2));
 
-    tape.is(info.root, '4dda343c05d6cfb005d9292cea0d4b32c4ad646b52473756c1a5e76bec647c0b');
+    tape.is(info.root, 'f08368a4bb17e33df79f9c63fa51fb1d60ca838d3219bc1cfb71e66f0d8ddc51');
 
   });
 
