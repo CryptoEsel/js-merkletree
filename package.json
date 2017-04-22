@@ -29,11 +29,13 @@
     "babel-register": "^6.24.1",
     "babili": "0.0.12",
     "cross-env": "^4.0.0",
-    "js-blake2s": "^1.1.1",
-    "js-hexi": "^1.2.0",
     "standard": "^10.0.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3",
     "tape-watch": "^2.3.0"
+  },
+  "dependencies": {
+    "js-blake2s": "^1.1.1",
+    "js-hexi": "^1.2.0"
   }
 }
